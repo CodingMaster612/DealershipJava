@@ -1,14 +1,28 @@
 package com.backend.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
+import com.backend.Entity.Product;
+import com.backend.Service.ProductService;
+import com.backend.Service.UserService;
+
+
+
 
 public class ProductController {
+	
+	@Autowired
+    ProductService productService;
+	
+	
+	@Autowired
+    UserService userService;
 	
 	 
 	
@@ -28,16 +42,16 @@ public class ProductController {
 	 public String CarLog(@ModelAttribute("car") Product product, Model model) {
 
 	      
-	        Product loggedCar= productService.createCar(product);
+	        Product loggedProduct= productService.createProduct(product);
 
-	        if(loggedCar == null) {
+	        if(loggedProduct == null) {
 	            model.addAttribute("message", "Your ProductLogging isn't valid");
 
 	            return "ProductLogging";
 	        }
 
 	        
-	        model.addAttribute("car", new Product());
+	        model.addAttribute("Product", new Product());
 
 	        return "ProductLogging";
 	    }

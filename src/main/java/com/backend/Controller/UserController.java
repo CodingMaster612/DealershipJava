@@ -11,6 +11,9 @@ package com.backend.Controller;
 	import org.springframework.web.bind.annotation.ModelAttribute;
 	import org.springframework.web.bind.annotation.PostMapping;
 
+import com.backend.Entity.User;
+import com.backend.Service.UserService;
+
 
 	
 
@@ -46,14 +49,14 @@ package com.backend.Controller;
 	   
 	    public String signUp(@ModelAttribute("user") User user, Model model) {
 
-	        User loggedInUser = userService.createAccount(user);
+//	        User loggedInUser = userService.createAccount(user);
 
 	      
-	        if(loggedInUser == null) {
-	            model.addAttribute("message", "Your email password combo isn't valid, ya FOO!");
-
-	            return "signUp";
-	        }
+//	        if(loggedInUser == null) {
+//	            model.addAttribute("message", "Your email password combo isn't valid, ya FOO!");
+//
+//	            return "signUp";
+//	        }
 
 	       
 	        model.addAttribute("user", new User());
