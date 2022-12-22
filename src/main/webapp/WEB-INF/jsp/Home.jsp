@@ -47,7 +47,7 @@
                   <!-- <li><a href="/oldCar">Used Vehicles</a></li>
                   <li><a href="/newCar">New Vehicles</a></li> -->
                   <li> <a href= "/productLogging">Add Car</a></li>
-                  <li> <a href= "">Products</a></li>
+                  <li> <a href= "/items">Products</a></li>
                   <li> <a href= "/signIn">Log in</a></li>
                   <li> <a href= "/signUp">Sign up</a></li>
                   

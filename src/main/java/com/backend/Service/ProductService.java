@@ -1,5 +1,9 @@
 package com.backend.Service;
 
+import java.util.List;
+
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,6 +42,10 @@ public class ProductService {
 
 	        return product;
 	}
+	
+	 public Product findProductById(Integer userId) {
+	        return productRepo.findById(userId).get();
+	    }
 
 
 	private boolean doesPriceExists(Integer price) {
@@ -68,4 +76,13 @@ public class ProductService {
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	
+	public List<Product> getAllProducts() {
+        return productRepo.findAll();
+    }
+    
+    public Product getCarById(Integer id) {
+        return productRepo.findById(id).get();
+    }
 }

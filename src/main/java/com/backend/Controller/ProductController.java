@@ -1,12 +1,16 @@
 package com.backend.Controller;
 
+import java.util.List;
+
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
 
 import com.backend.Entity.Product;
 import com.backend.Service.ProductService;
@@ -55,4 +59,29 @@ public class ProductController {
 
 	        return "productLogging";
 	    }
+	 
+	 
+	 
+	 @GetMapping("/items")
+	    public String viewAllProduct(Model model, HttpSession session) {
+
+	        Integer loggedInCarId = (Integer) session.getAttribute("loggedInCarId");
+	        
+
+	        if(loggedInCarId != null) {
+	            Product loggedInProduct = productService.findProductById(loggedInCarId);
+	            model.addAttribute("loggedInCar", loggedInProduct);
+	            
+	        }
+
+	        List<Product> allProducts = productService.getAllProducts();
+
+	        model.addAttribute("allCars", allProducts);
+	        
+	        
+	       
+
+	        return "items";
+	    }
+
 }
