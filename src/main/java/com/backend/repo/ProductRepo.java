@@ -12,6 +12,6 @@ import com.backend.Entity.Product;
 public interface ProductRepo extends JpaRepository<Product, Integer>{
 	
 	
-	@Query(value="select * from  and description=?1 and maufacture=?2 and mileage=?3 and model=?4 and price=?5", nativeQuery = true)
-	public Product findByInformationOnCar(String description, String manufacture , Integer mileage, String model, Integer price);
+	@Query(value="select * from  and description=?1 and maufacture=?2 and mileage=?3 and model=?4 and price=?5 and time=?6", nativeQuery = true)
+	public Product findByInformationOnCar(String description, String manufacture , Integer mileage, String model, Integer price ,Integer time);
 }

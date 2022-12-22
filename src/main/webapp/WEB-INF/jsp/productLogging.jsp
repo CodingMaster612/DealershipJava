@@ -19,19 +19,20 @@
       
         <form:input path="manufacturer" placeholder="Manufacturer" type="text" />
         
-        <%-- <form:input  path="purchased" placeholder="Purchased" type="purchased" /> --%>
+       
         
         <form:input path="mileage" placeholder="Mileage" type="mileage" />
         
         <form:input  path="price" placeholder="Price" type="price" />
         
         <form:input path="model" placeholder="Model" type="model" />
-        
-        <%-- <form:input  path="build" placeholder="Build" type="build" /> --%>
+       
         
         <form:input  path="description" placeholder="Description" type="description" />
         
         <form:input  path="images" placeholder="Images" type="images" />
+       
+        <form:input path="time" placeholder="Time" tyoe="time" />
         
         
         <form:button type="submit">Submit</form:button>

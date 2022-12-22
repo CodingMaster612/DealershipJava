@@ -35,10 +35,20 @@
                     <div>${car.getManufacturer()}</div>
                     <div>${car.getModel()}</div>
                     <div>${car.getPrice()}</div>
-                    
-                    <div>${car.getAccountCreationDate()}</div>
+                   	
                     <img src="${car.getImages()}" />
                    
+                  	<c:choose>
+            <c:when test="${car.getTime()== 120}">
+                
+                                 <button  class="buy-button"><a class="button-link" href="">Bid On this Car</a></button>
+                
+            </c:when>    
+            
+        </c:choose>
+                
+                
+            	 
                   	
                     
                 	
