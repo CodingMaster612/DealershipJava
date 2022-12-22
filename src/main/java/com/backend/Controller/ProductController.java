@@ -1,7 +1,7 @@
 package com.backend.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,7 +14,7 @@ import com.backend.Service.UserService;
 
 
 
-
+@Controller
 public class ProductController {
 	
 	@Autowired
@@ -30,16 +30,16 @@ public class ProductController {
 	
 	 
 	
-	 @GetMapping("/ProductLogging")
-	    public String CarLog(Model model) {
+	 @GetMapping("/productLogging")
+	    public String ProductLogging(Model model) {
 
 	       
 	        model.addAttribute("Product", new Product());
 
-	        return "ProductLogging";
+	        return "productLogging";
 	    }
-	 @PostMapping("/ProductLogging")
-	 public String CarLog(@ModelAttribute("car") Product product, Model model) {
+	 @PostMapping("/productLogging")
+	 public String ProductLogging(@ModelAttribute("Product") Product product, Model model) {
 
 	      
 	        Product loggedProduct= productService.createProduct(product);
@@ -47,12 +47,12 @@ public class ProductController {
 	        if(loggedProduct == null) {
 	            model.addAttribute("message", "Your ProductLogging isn't valid");
 
-	            return "ProductLogging";
+	            return "productLogging";
 	        }
 
 	        
 	        model.addAttribute("Product", new Product());
 
-	        return "ProductLogging";
+	        return "productLogging";
 	    }
 }
