@@ -11,8 +11,9 @@ package com.backend.Controller;
 	import org.springframework.web.bind.annotation.GetMapping;
 	import org.springframework.web.bind.annotation.ModelAttribute;
 	import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
-	import com.backend.Entity.User;
+import com.backend.Entity.User;
 	import com.backend.Service.UserService;
 
 
@@ -23,75 +24,74 @@ package com.backend.Controller;
 
 	public class UserController {
 	    
-		@Autowired
-	    UserService userService;
+		 @Autowired
+		    UserService userService;
+		    
+		    @GetMapping("/")
+		    public String index(HttpSession session, Model model) {
+		        
+		        Integer loggedInUserId = (Integer) session.getAttribute("loggedInUserId");
 
-	 
-	   
-		@GetMapping("/")
-	    public String signIn(Model model) {
+		        if(loggedInUserId != null) {
+		            System.out.println(loggedInUserId);
+		            User loggedInUser = userService.findUserById(loggedInUserId);
+		            model.addAttribute("loggedInUser", loggedInUser);
 
+		        }
+		        return "Home";
+		    }
 
-	        model.addAttribute("user", new User());
+		    @GetMapping("/signUp")
+		    public String signUp(Model model) {
 
-	        return "signIn";
-	    }
-		
-		 @PostMapping("/signIn")  
-	
-	    @GetMapping("/signUp")
-	    public String signUp(Model model) {
+		        model.addAttribute("user", new User());
+		        return "signUp";
+		    }
 
-	       
-	        
-	        model.addAttribute("user", new User());
+		    @PostMapping("/signUp")
+		    public String signUp(@ModelAttribute User user, Model model) {
 
-	       
-	        return "signUp";
-	    }
-	    
-	   
+		        userService.createAccount(user);
 
-	    @PostMapping("/signUp")
-	   
-	    public String signUp(@ModelAttribute("user") User user, Model model) {
+		        model.addAttribute("user", new User());
 
-//	        User loggedInUser = userService.createAccount(user);
+		        return "signIn";
 
-	      
-//	        if(loggedInUser == null) {
-//	            model.addAttribute("message", "Your email password combo isn't valid, ya FOO!");
-//
-//	            return "signUp";
-//	        }
+		    }
+		    
+		    @GetMapping("/signIn")
+		    public String signIn(Model model) {
 
-	       
-	        model.addAttribute("user", new User());
+		        model.addAttribute("user", new User());
+		        return "signIn";
+		    }
 
-	        return "signUp";
-	    }
+		    @PostMapping("/signIn")
+		    public String signIn(@ModelAttribute User user, Model model, HttpSession session) {
 
-	   
-	    
-	                  
-	   
-	    
-	    
-	    public String signIn(@ModelAttribute("user") User user, HttpSession session , Model model) {
+		        User loggedInUser = userService.findByEmailAndPassword(user);
 
-	        User loggedInUser = userService.findByEmailAndPassword(user);
+		        if(loggedInUser != null) {
+		            session.setAttribute("loggedInUserId", loggedInUser.getId());
 
-	        if(loggedInUser == null) {
-	            return "signIn";
-	        }
+		            model.addAttribute("loggedInUser", loggedInUser);
 
-	        session.setAttribute("loggedInUser", loggedInUser);
-	        return "main";
+		            return "Home";
+		        } else {
+		            model.addAttribute("message", "You don't have an account.");
+		            return "signIn";
+		        }
 
-	    }
-	    
-	    
-	    
+		    }
+
+		    @PostMapping("/signOut")
+		    public ModelAndView signOut(HttpSession session) {
+
+		        session.removeAttribute("loggedInUserId");
+
+		        return new ModelAndView("home");
+		    }
+
 
 	}
 	    

@@ -12,8 +12,12 @@ public class UserService {
 	@Autowired
     UserRepo userRepo;
     
-   
-	
+    
+
+    public User createAccount(User user) {
+
+        return save(user);
+    }
     
     public User save(User user) {
         return userRepo.save(user);
@@ -22,4 +26,9 @@ public class UserService {
     public User findByEmailAndPassword(User user) {
         return userRepo.findByUserNameAndPassword(user.getUsername(), user.getPassword());
     }
+
+    public User findUserById(Integer userId) {
+        return userRepo.findById(userId).get();
+    }
+	
 }

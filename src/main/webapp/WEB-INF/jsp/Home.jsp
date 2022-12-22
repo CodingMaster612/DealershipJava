@@ -8,7 +8,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/Home.css" />
     
 
 
@@ -42,13 +42,14 @@
 
           </li>
           <li id="options">
-              <a>Vehicles</a>
+              <a>Main Menu</a>
               <ul class="subnav">
                   <!-- <li><a href="/oldCar">Used Vehicles</a></li>
                   <li><a href="/newCar">New Vehicles</a></li> -->
-                  <li> <a href= "/CarLog">Add Car</a></li>
-                  <li> <a href= "/Products">Products</a></li>
-                  <li> <a href= "/searchLog">Search Car</a></li>
+                  <li> <a href= "/productLogging">Add Car</a></li>
+                  <li> <a href= "">Products</a></li>
+                  <li> <a href= "/signIn">Log in</a></li>
+                  <li> <a href= "/signUp">Sign up</a></li>
                   
               </ul>
           </li>

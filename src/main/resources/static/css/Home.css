@@ -1,0 +1,155 @@
+/* Add a black background color to the top navigation bar */
+body{
+  height:100vh;
+  width:100vw;
+  margin: 0;
+  background:
+       
+        linear-gradient(
+          rgba(0, 0, 0, 0.7), 
+          rgba(0, 0, 0, 0.7)
+        ),
+        
+       
+        url('https://img.gta5-mods.com/q95/images/nerdcubed-los-santos-customs/8d402a-2015-10-15_00020.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+
+ 
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+.nav {
+  background: #232323;
+  height: 60px;
+  display: inline-block;
+}
+
+.nav li {
+  float: left;
+  list-style-type: none;
+  position: relative;
+}
+
+.nav li a {
+  font-size: 16px;
+  color: white;
+  display: block;
+  line-height: 60px;
+  padding: 0 26px;
+  text-decoration: none;
+  border-left: 1px solid #2e2e2e;
+  font-family: Montserrat, sans-serif;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+.nav li a:hover {
+  background-color: #2e2e2e;
+}
+
+#settings a {
+  padding: 18px;
+  height: 24px;
+  font-size: 10px;
+  line-height: 24px;
+}
+
+
+#search {
+  width: 357px;
+  margin: 4px;
+}
+#search_text{
+  width: 297px;
+  padding: 15px 0 15px 20px;
+  font-size: 16px;
+  font-family: Montserrat, sans-serif;
+  border: 0 none;
+  height: 52px;
+  margin-right: 0;
+  color: black;
+  outline: none;
+  background: gray;
+  float: left;
+  box-sizing: border-box;
+  transition: all 0.15s;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: white;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: white;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: white;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: white;
+}
+#search_text:focus {
+  background: white;
+}
+#search_button {
+  border: 0 none;
+  background: white url('https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-512.png') center no-repeat;
+  width: 60px;
+  float: left;
+  padding: 0;
+  text-align: center;
+  height: 52px;
+  cursor: pointer;
+}
+
+#options a{
+  border-left: 0 none;
+}
+
+.subnav {
+  visibility: hidden;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  width: 200px;
+  height: auto;
+  opacity: 0;
+  transition: all 0.1s;
+  background: #232323;
+}
+.subnav li {
+  float: none;
+}
+.subnav li a {
+  border-bottom: 1px solid #2e2e2e;
+}
+#options:hover .subnav {
+  visibility: visible;
+  top: 100%;
+  opacity: 1;
+}
+
+
+.title{
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  -webkit-text-stroke: 1px #fff;
+  color:transparent;
+  background-image: linear-gradient(black,#fff);
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-position: -750px 0;
+  animation: backcolor 5s linear infinite alternate;
+
+}
+@keyframes backcolor {
+  100%{
+    background-position: 0 0;
+  }
+}
+
+
