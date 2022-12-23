@@ -39,9 +39,9 @@
                     <img src="${car.getImages()}" />
                    
                   	<c:choose>
-            <c:when test="${car.getTime()== 120}">
+            		<c:when test="${car.getTime()== 120}">
                 
-                                 <button  class="buy-button"><a class="button-link" href="">Bid On this Car</a></button>
+                   <button  class="buy-button"><a class="button-link" href="">Bid</a></button>
                 
             </c:when>    
             

@@ -1,5 +1,18 @@
 /* Add a black background color to the top navigation bar */
+
+
+
 body{
+	height:100vh;
+	width:100vw;
+	margin: 0;
+	background-image: url('https://img.gta5-mods.com/q95/images/nerdcubed-los-santos-customs/8d402a-2015-10-15_00020.jpg')
+}
+
+
+
+
+/* body{
   height:100vh;
   width:100vw;
   margin: 0;
@@ -15,7 +28,7 @@ body{
         background-repeat: no-repeat;
         background-size: cover;
 }
-
+ */
  
 * {
     margin: 0;
