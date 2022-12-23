@@ -23,7 +23,7 @@
           </li>
           
           <li>
-              <a href="/">Log Out</a>
+              <a href="/signIn">Log Out</a>
              
           </li>
           <li id="search">
@@ -50,6 +50,16 @@
                   <li> <a href= "/items">Products</a></li>
                   <li> <a href= "/signIn">Log in</a></li>
                   <li> <a href= "/signUp">Sign up</a></li>
+                  <li> <a href= "/report">Reports</a></li>
+                  <li> <a href= "/admin">Admin</a></li>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
                   
               </ul>
           </li>
