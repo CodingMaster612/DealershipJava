@@ -18,8 +18,14 @@ public class Admin {
 private Integer id;
 
 
-@Column(name="Adminkey")
-private String Adminkey;
+@Column(name="adminkey")
+private String adminkey;
+
+
+
+
+
+
 
 
 public Integer getId() {
@@ -33,19 +39,25 @@ public void setId(Integer id) {
 
 
 public String getAdminkey() {
-	return Adminkey;
+	return adminkey;
 }
 
 
 public void setAdminkey(String adminkey) {
-	Adminkey = adminkey;
+	this.adminkey = adminkey;
 }
 
 
 @Override
 public String toString() {
-	return "Admin [id=" + id + ", Adminkey=" + Adminkey + "]";
+	return "Admin [id=" + id + ", adminkey=" + adminkey + "]";
 }
+
+
+
+
+
+
 
 
 

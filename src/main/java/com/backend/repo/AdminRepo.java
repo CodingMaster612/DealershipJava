@@ -12,7 +12,7 @@ import com.backend.Entity.Admin;
 	public interface AdminRepo extends JpaRepository<Admin, Integer>{
 		
 		
-		@Query(value="select * from user where id=?1 and Adminkey=?2" , nativeQuery = true)
+		@Query(value="select * from admin where id=?1 and Adminkey=?2" , nativeQuery = true)
 		public Admin findByIdAndAdminkey(Integer id, String Adminkey);
 	}
 

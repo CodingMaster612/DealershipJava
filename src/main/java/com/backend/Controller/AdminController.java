@@ -27,7 +27,7 @@ public class AdminController {
 	    }
 
 	    @PostMapping("/admin")
-	    public String signIn(@ModelAttribute Admin admin, Model model, HttpSession session) {
+	    public String admin(@ModelAttribute Admin admin, Model model, HttpSession session) {
 
 	        Admin loggedInAdmin = adminService.findByIdAndAdminkey(admin);
 

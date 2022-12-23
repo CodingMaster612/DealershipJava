@@ -25,7 +25,10 @@ public class AdminService {
 	        return adminRepo.findByIdAndAdminkey(admin.getId(), admin.getAdminkey());
 	    }
 
-	    public Admin findUserById(Integer adminId) {
+	    public Admin findAdminById(Integer adminId) {
 	        return adminRepo.findById(adminId).get();
 	    }
+	    
+	    
+	    
 }
