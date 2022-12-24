@@ -58,8 +58,11 @@ public class AdminController {
 	                
 	            model.addAttribute("loggedInAdmin", loggedInAdmin);
 	            
-//	           validate fucntion here
-	    
+	            
+	            
+	            admin.vailidate("1070", 1);
+	            	
+	            
 	            	
 	    
 	    
@@ -87,4 +90,3 @@ public class AdminController {
 //	      }
 }
 	    
-}
