@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.backend.Entity.Admin;
@@ -44,14 +45,46 @@ public class AdminController {
 
 	    }
 	    
-	    @GetMapping("/report")
-	    public String report() {
-	        return "report";
+    
+	    
+	    @GetMapping("/admin/{adminId}/report")
+	    public String is_Admin(@PathVariable("adminId") Integer adminId, HttpSession session, Model model) {
+	    
+	    	Admin admin = adminService.findAdminById(adminId);
+	        Integer loggedInAdminId = (Integer) session.getAttribute("loggedInAdminId");
+	        Admin loggedInAdmin;
+	        if(loggedInAdminId != null) {
+	            loggedInAdmin = adminService.findAdminById(loggedInAdminId);
+	                
+	            model.addAttribute("loggedInAdmin", loggedInAdmin);
+	            
+//	           validate fucntion here
+	    
+	            	
+	    
+	    
 	    }
+	        return "report";
 	    
 	    
 	    
 	    
+	     
+	      
 	    
+}
+	    
+//	    	@PreAuthorize("isAdmin(1)")
+//	      @GetMapping("{adminId}")
+//	      public String giveAccess(@PathVariable("adminId") Integer adminId, Model model,  HttpSession session) {
+//	    	Admin admin = adminService.findAdminById(adminId);
+//	        Integer loggedInAdminId = (Integer) session.getAttribute("loggedInAdminId");
+//	        Admin loggedInAdmin;
+//	        if(loggedInAdminId != null) {
+//	            loggedInAdmin = adminService.findAdminById(loggedInAdminId);
+//	                
+//	            model.addAttribute("loggedInAdmin", loggedInAdmin);
+//	      }
+}
 	    
 }

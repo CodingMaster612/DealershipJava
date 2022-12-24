@@ -83,16 +83,21 @@ import com.backend.Entity.User;
 		        }
 
 		    }
+		    
+		    @GetMapping("/signOut")
+		    public String signOut(Model Model) {
+		    	return "Home";
+		    }
 
 		    @PostMapping("/signOut")
 		    public ModelAndView signOut(HttpSession session) {
 
 		        session.removeAttribute("loggedInUserId");
+		        session.removeAttribute("loggedInAdminId");
 
-		        return new ModelAndView("home");
+		        return new ModelAndView("signIn");
 		    }
 		    
-		   
 
 
 	}
