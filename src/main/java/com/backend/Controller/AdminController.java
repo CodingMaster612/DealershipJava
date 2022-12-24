@@ -43,4 +43,15 @@ public class AdminController {
 	        }
 
 	    }
+	    
+	    @GetMapping("/report")
+	    public String report() {
+	        return "report";
+	    }
+	    
+	    
+	    
+	    
+	    
+	    
 }

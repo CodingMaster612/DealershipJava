@@ -7,10 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class BidController {
 
 
-	@GetMapping("/report")
-    public String main() {
-        return "report";
-    }
+	
 
 
 }

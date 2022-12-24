@@ -14,5 +14,7 @@ import com.backend.Entity.Admin;
 		
 		@Query(value="select * from admin where id=?1 and Adminkey=?2" , nativeQuery = true)
 		public Admin findByIdAndAdminkey(Integer id, String Adminkey);
+
+		
 	}
 
