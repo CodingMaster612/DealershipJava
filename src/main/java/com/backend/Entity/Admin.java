@@ -47,15 +47,7 @@ public void setAdminkey(String adminkey) {
 	this.adminkey = adminkey;
 }
 
-public Boolean vailidate(String adminkey, Integer id) {
-	if(adminkey.equals(adminkey) && id.equals(id)) {
-		return true;
-	}
-	else {
-		return false;
-	}
-		
-}
+
 
 
 @Override

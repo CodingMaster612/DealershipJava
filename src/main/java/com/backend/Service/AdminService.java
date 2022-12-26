@@ -30,5 +30,14 @@ public class AdminService {
 	    }
 	    
 	    
-	    
+	    public Boolean vailidate(Integer id) {
+	    	if(id.equals(id)) {
+	    		return true;
+	    		
+	    	}
+	    	else {
+	    		return false;
+	    	}
+	    		
+	    }
 }

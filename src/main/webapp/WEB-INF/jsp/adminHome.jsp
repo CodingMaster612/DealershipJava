@@ -44,15 +44,10 @@
           <li id="options">
               <a>Main Menu</a>
               <ul class="subnav">
-                  <!-- <li><a href="/oldCar">Used Vehicles</a></li>
-                  <li><a href="/newCar">New Vehicles</a></li> -->
-                  <li> <a href= "/productLogging">Add Car</a></li>
-                  <li> <a href= "/items">Products</a></li>
-                  <li> <a href= "/signIn">Log in</a></li>
-                  <li> <a href= "/signUp">Sign up</a></li>
-                 	<li> <a href= "/report">report</a></li>
+                 
                   
-                  <li> <a href= "/admin">Admin</a></li>
+                  
+                  <li> <a href= "/report">Reports</a></li>
                   
                   
                   
@@ -66,14 +61,8 @@
               </ul>
           </li>
       </ul>
-      	<c:if test="${user != null}">
-      	<div>
-      	${user.getUsername()}
       	
-      	
-      	</div>
-      	</c:if>
-        <h1 class="title">Los Santos Customs</h1>
+       
         
 
 

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.backend.Entity.Admin;
 import com.backend.Entity.User;
 import com.backend.Service.AdminService;
+import com.backend.Service.UserService;
 
 @Controller
 public class AdminController {
@@ -37,7 +38,7 @@ public class AdminController {
 
 	            model.addAttribute("loggedInAdmin", loggedInAdmin);
 
-	            return "Home";
+	            return "adminHome";
 	        } else {
 	            model.addAttribute("message", "You don't have an account.");
 	            return "admin";
@@ -47,27 +48,37 @@ public class AdminController {
 	    
     
 	    
-	    @GetMapping("/admin/{adminId}/report")
-	    public String is_Admin(@PathVariable("adminId") Integer adminId, HttpSession session, Model model) {
-	    
-	    	Admin admin = adminService.findAdminById(adminId);
-	        Integer loggedInAdminId = (Integer) session.getAttribute("loggedInAdminId");
-	        Admin loggedInAdmin;
-	        if(loggedInAdminId != null) {
-	            loggedInAdmin = adminService.findAdminById(loggedInAdminId);
-	                
-	            model.addAttribute("loggedInAdmin", loggedInAdmin);
-	            
-	            
-	            
-	            admin.vailidate("1070", 1);
-	            	
-	            
-	            	
-	    
-	    
+	    @GetMapping("/report")
+	    public String report( Admin admin ,Model model) {
+	    	return "report";
 	    }
-	        return "report";
+	   
+	               
+	    @PostMapping("/report")
+	    public String report(@ModelAttribute Admin admin, Model model, HttpSession session) {
+
+	        Admin loggedInAdmin = adminService.findByIdAndAdminkey(admin);
+
+	        if(loggedInAdmin != null) {
+	            session.setAttribute("loggedInAdminId", loggedInAdmin.getId());
+
+	            model.addAttribute("loggedInAdmin", loggedInAdmin);
+
+	            return "report";
+	        } else {
+	            model.addAttribute("message", "You don't have an account.");
+	            return "Home";
+	        }
+
+	    } 
+	           
+	            	
+	            
+	            	
+	    
+	    
+	    
+	       
 	    
 	    
 	    
@@ -77,16 +88,6 @@ public class AdminController {
 	    
 }
 	    
-//	    	@PreAuthorize("isAdmin(1)")
-//	      @GetMapping("{adminId}")
-//	      public String giveAccess(@PathVariable("adminId") Integer adminId, Model model,  HttpSession session) {
-//	    	Admin admin = adminService.findAdminById(adminId);
-//	        Integer loggedInAdminId = (Integer) session.getAttribute("loggedInAdminId");
-//	        Admin loggedInAdmin;
-//	        if(loggedInAdminId != null) {
-//	            loggedInAdmin = adminService.findAdminById(loggedInAdminId);
-//	                
-//	            model.addAttribute("loggedInAdmin", loggedInAdmin);
-//	      }
-}
+
+
 	    
