@@ -66,6 +66,7 @@
             		<c:when test="${ admin.getIsAdmin()== true}">
                 
                  <button><a href="/report">report</a></button>
+                  <button><a href="/report">add car</a></button>
                 
             </c:when>    
             
