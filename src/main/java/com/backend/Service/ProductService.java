@@ -77,7 +77,9 @@ public class ProductService {
 		return false;
 	}
 	
-	
+//	public List<Product> getWhipsOnLot() {
+//        return productRepo.getWhipsOnLot();
+//    }
 	public List<Product> getAllProducts() {
         return productRepo.findAll();
     }

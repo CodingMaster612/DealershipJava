@@ -22,10 +22,21 @@ private Integer id;
 private String adminkey;
 
 
+@Column(name = "isAdmin", nullable = false, columnDefinition = "boolean default 0")
+private Boolean isAdmin;
 
 
 
 
+
+public Boolean getIsAdmin() {
+	return isAdmin;
+}
+
+
+public void setIsAdmin(Boolean isAdmin) {
+	this.isAdmin = isAdmin;
+}
 
 
 public Integer getId() {
@@ -48,12 +59,15 @@ public void setAdminkey(String adminkey) {
 }
 
 
-
-
 @Override
 public String toString() {
-	return "Admin [id=" + id + ", adminkey=" + adminkey + "]";
+	return "Admin [id=" + id + ", adminkey=" + adminkey + ", isAdmin=" + isAdmin + "]";
 }
+
+
+
+
+
 
 
 

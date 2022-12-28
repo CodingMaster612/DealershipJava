@@ -18,6 +18,7 @@
       <form:form modelAttribute="user" action="signUp" method="post">
         <form:input path="username" placeholder="Username" type="text" />
         <form:input  path="password" placeholder="Password" type="password" />
+        <form:input path ="isAdmin" placeholder="admin boolean" type="iadmin"/>
         <form:button type="submit" href="">Sign up</form:button>
         <p class="message">
           Already have an Account?<a

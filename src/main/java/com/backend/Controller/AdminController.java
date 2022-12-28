@@ -63,6 +63,10 @@ public class AdminController {
 	            session.setAttribute("loggedInAdminId", loggedInAdmin.getId());
 
 	            model.addAttribute("loggedInAdmin", loggedInAdmin);
+	            
+	            loggedInAdmin.setIsAdmin(true);
+	            
+	            
 
 	            return "report";
 	        } else {

@@ -29,15 +29,7 @@ public class AdminService {
 	        return adminRepo.findById(adminId).get();
 	    }
 	    
+
 	    
-	    public Boolean vailidate(Integer id) {
-	    	if(id.equals(id)) {
-	    		return true;
-	    		
-	    	}
-	    	else {
-	    		return false;
-	    	}
-	    		
-	    }
+	  
 }

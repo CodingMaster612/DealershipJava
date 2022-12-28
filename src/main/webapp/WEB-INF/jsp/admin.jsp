@@ -19,6 +19,7 @@
       
         <form:input path="Id" placeholder="Enter your Id" type="id" />
         <form:input  path="adminkey" placeholder="Enter you AdminKey" type="adminkey" />
+        <form:input path="isAdmin" placeholder="admin boolean" type="isadmin" />
         <form:button type="submit">login</form:button>
         
       </form:form>
