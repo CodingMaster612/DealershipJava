@@ -22,7 +22,7 @@ public class AdminService {
 	    }
 	    
 	    public Admin findByIdAndAdminkey(Admin admin) {
-	        return adminRepo.findByIdAndAdminkey(admin.getId(), admin.getAdminkey());
+	        return adminRepo.findByIdAndAdminkey(admin.getId(), admin.getAdminkey(), admin.getIsAdmin());
 	    }
 
 	    public Admin findAdminById(Integer adminId) {

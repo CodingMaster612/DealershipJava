@@ -54,29 +54,8 @@ public class AdminController {
 	    }
 	   
 	               
-	    @PostMapping("/report")
-	    public String report(@ModelAttribute Admin admin, Model model, HttpSession session) {
-
-	        Admin loggedInAdmin = adminService.findByIdAndAdminkey(admin);
-
-	        if(loggedInAdmin != null) {
-	            session.setAttribute("loggedInAdminId", loggedInAdmin.getId());
-
-	            model.addAttribute("loggedInAdmin", loggedInAdmin);
-	            
-	            loggedInAdmin.setIsAdmin(true);
-	            
-	            
-
-	            return "report";
-	        } else {
-	            model.addAttribute("message", "You don't have an account.");
-	            return "Home";
-	        }
-
-	    } 
-	           
-	            	
+	    
+	          	
 	            
 	            	
 	    

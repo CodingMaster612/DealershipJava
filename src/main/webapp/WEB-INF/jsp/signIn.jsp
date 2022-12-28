@@ -19,6 +19,7 @@
       
         <form:input path="username" placeholder="Username" type="text" />
         <form:input  path="password" placeholder="Password" type="password" />
+        <form:input  path="isAdmin" placeholder="admin boolean" type="isadmin" />
         <form:button type="submit">login</form:button>
         <p class="message">
           Not registered?

@@ -50,13 +50,19 @@
                   <li> <a href= "/items">Products</a></li>
                   <li> <a href= "/signIn">Log in</a></li>
                   <li> <a href= "/signUp">Sign up</a></li>
-                 	<li> <a href= "/report">report</a></li>
-                  
-                  <li> <a href= "/admin">Admin</a></li>
-                  
-                  
-                  
-                  
+              	<li><a href="/admin">admin</a>
+                 	
+                 
+                 
+                <c:choose>
+            		<c:when test="${ user.getIsAdmin()== false}">
+                
+                  <li><a href="/reports">reports</a></li>
+                
+            </c:when>    
+            
+        </c:choose> 
+                
                   
                   
                   

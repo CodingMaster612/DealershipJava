@@ -47,8 +47,7 @@
                  
                   
                   
-                  <li> <a href= "/report">Reports</a></li>
-                  
+                
                   
                   
                   
@@ -63,7 +62,14 @@
       </ul>
       	
        
-        
+        <c:choose>
+            		<c:when test="${ admin.getIsAdmin()== true}">
+                
+                 <button><a href="/report">report</a></button>
+                
+            </c:when>    
+            
+        </c:choose> 
 
 
    
