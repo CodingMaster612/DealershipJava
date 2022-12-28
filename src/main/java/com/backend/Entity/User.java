@@ -39,13 +39,51 @@ public class User {
      // Column maps to the same name as the column name in the database, it is case sensitive
      @Column(name = "password", nullable = false)
      
-     
     private String password;
+    
+    @Column(name = "isAdmin", nullable = false, columnDefinition = "boolean default 0")
+    private Boolean isAdmin;
+    
+    
+    @OneToMany
+    @JoinColumn(name="user_id", referencedColumnName = "id")
+    private List<Product> storage;
     
    public User() {
     }
 
-    public String getUsername() {
+   
+   
+   
+    public List<Product> getStorage() {
+	return storage;
+}
+
+
+
+
+public void setStorage(List<Product> storage) {
+	this.storage = storage;
+}
+
+
+
+
+	public Boolean getIsAdmin() {
+	return isAdmin;
+}
+
+
+
+
+public void setIsAdmin(Boolean isAdmin) {
+	this.isAdmin = isAdmin;
+}
+
+
+
+
+	public String getUsername() {
         return username;
     }
 

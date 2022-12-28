@@ -23,23 +23,23 @@ public class Reports {
     @Column(name = "id")
     private Integer id;
 
-    /*Many to Many mapping, we will have many different users carts having many products in their cart */
-    @ManyToMany
-    // The Join table will create a table responsible for holding the foreign key for both tables
-    @JoinTable(
-        // name of table
-		name="report_items",
-        // the foreign key we are storing from this file
-	    joinColumns = {
-            @JoinColumn(name = "bid_id", referencedColumnName="id")
-        }, 
-        // the foreign key we are storing from the other class
-	    inverseJoinColumns = {
-            @JoinColumn(name = "product_id", referencedColumnName="id")
-        }
-	)
-    // Its a list since its many products being stored in our cart
-    List<Product> products;
+//    /*Many to Many mapping, we will have many different users carts having many products in their cart */
+//    @ManyToMany
+//    // The Join table will create a table responsible for holding the foreign key for both tables
+//    @JoinTable(
+//        // name of table
+//		name="report_items",
+//        // the foreign key we are storing from this file
+//	    joinColumns = {
+//            @JoinColumn(name = "bid_id", referencedColumnName="id")
+//        }, 
+//        // the foreign key we are storing from the other class
+//	    inverseJoinColumns = {
+//            @JoinColumn(name = "product_id", referencedColumnName="id")
+//        }
+//	)
+//    // Its a list since its many products being stored in our cart
+//    List<Product> products;
     
     
     public Reports() {}
@@ -51,19 +51,20 @@ public class Reports {
     public void setId(Integer id) {
         this.id = id;
     }
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
+//    public List<Product> getProducts() {
+//        return products;
+//    }
+//
+//    public void setProducts(List<Product> products) {
+//        this.products = products;
+//    }
 
 	@Override
 	public String toString() {
-		return "Reports [id=" + id + ", products=" + products + "]";
+		return "Reports [id=" + id + "]";
 	}
-    
+
+	
     
 
 }
