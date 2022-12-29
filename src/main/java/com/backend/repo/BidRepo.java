@@ -12,5 +12,5 @@ public interface BidRepo extends JpaRepository<Bid, Integer>{
 	
 	
 	@Query(value="select * from  and id=?1 and  bid=?2", nativeQuery = true)
-	public Product findByInformationOnCar(String description, String manufacture , Integer mileage, String model, Integer price ,Integer time);
+	public Product findByBidOnCar(Integer id, Integer bid);
 }
