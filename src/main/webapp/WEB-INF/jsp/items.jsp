@@ -41,7 +41,7 @@
                   	<c:choose>
             		<c:when test="${car.getTime()== 120}">
                 
-                   <button  class="buy-button"><a class="button-link" href="">Bid</a></button>
+                   <button  class="buy-button"><a class="button-link" href="/bid">Bid</a></button>
                 
             </c:when>    
             
