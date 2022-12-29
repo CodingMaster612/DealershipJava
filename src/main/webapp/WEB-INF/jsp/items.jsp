@@ -43,18 +43,16 @@
                 
                    <button  class="buy-button"><a class="button-link" href="/bid">Bid</a></button>
                 
-            </c:when>    
+            </c:when> 
+            
+            <c:when test="${car.getTime() != 120}">
+                	<form:form modelAttribute="buy" action="buy" method="post">
+     				<button  class="buy-button"><a class="button-link" href="">Buy</a></button>
+                </form:form>
+            </c:when>       
             
         </c:choose>
-                
-                
-            	 
-                  	
-                    
-                	
-                	
-             
-                </div>
+         </div>
 <!--                
  -->                
             </c:forEach>

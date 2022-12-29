@@ -38,6 +38,7 @@ package com.backend.Entity;
 		@Column(name="time")
 		private Integer time;
 		
+		
 		public Integer getId() {
 			return id;
 		}
