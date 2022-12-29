@@ -22,7 +22,7 @@
         <form:button type="submit" href="">Sign up</form:button>
         <p class="message">
           Already have an Account?<a
-            href="/"
+            href="/signIn"
             >Login here</a
           >
         </p>

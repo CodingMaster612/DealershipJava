@@ -32,7 +32,7 @@ public class BidController {
         Bid loggedInBid = bidService.createBid(bid);
 
         if(loggedInBid != null) {
-            session.setAttribute("loggedInBidId", loggedInBid.getId());
+            session.setAttribute("loggedInBidId", loggedInBid);
 
             model.addAttribute("loggedInBid", loggedInBid);
 

@@ -16,9 +16,7 @@ public class BidService {
 	
 	
 	public Bid createBid(Bid bid) {
-		if(doesIdExist(bid.getId())) {
-			return null;
-		}
+		
 		
 		
 		
@@ -37,13 +35,10 @@ public class BidService {
 		return false;
 	}
 
-	private boolean doesIdExist(Integer id) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	
 
 	public Bid findByBidOnCar(Bid bid) {
-		return bidRepo.findByBidOnCar(bid.getId(), bid.getBid());
+		return bidRepo.findByBidOnCar( bid.getBid());
 	}
 
 	

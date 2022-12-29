@@ -1,8 +1,11 @@
 package com.backend.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.backend.Entity.Product;
 import com.backend.Entity.User;
 import com.backend.repo.UserRepo;
 
@@ -12,7 +15,8 @@ public class UserService {
 	@Autowired
     UserRepo userRepo;
     
-    
+	 @Autowired
+	    ProductService productService;
 
     public User createAccount(User user) {
 
@@ -31,5 +35,20 @@ public class UserService {
         return userRepo.findById(userId).get();
     }
     
+    public List<User> findAllUsers() {
+        return userRepo.findAll();
+    }
+    
+    
+    public User buyProduct(Integer userId, Integer productId) {
+
+        User loggedInUser = findUserById(userId);
+
+       Product product = productService.findProductById(productId);
+
+        loggedInUser.getStorage().add(product);
+
+        return save(loggedInUser);
+    }
 	
 }

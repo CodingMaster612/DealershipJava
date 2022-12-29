@@ -16,11 +16,11 @@
 
       <form:form modelAttribute="bid" action="bid" method="post">
       
-        <form:input path="id" placeholder="Id" type="id" />
+       
         
        
         
-        <form:input path="bid" placeholder="Bid" type="bid" />
+        <form:input path="bid" placeholder="Place a Bid..." type="bid" />
         
         
         

@@ -15,17 +15,11 @@ public class Bid {
 	
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	
-	@Column(name="id")
-	private Integer id;
+	
 	@Column(name="bid")
 	private Integer bid;
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
+	
 	public Integer getBid() {
 		return bid;
 	}
@@ -34,8 +28,9 @@ public class Bid {
 	}
 	@Override
 	public String toString() {
-		return "Bid [id=" + id + ", bid=" + bid + "]";
+		return "Bid [bid=" + bid + "]";
 	}
+	
 	
 	
 	

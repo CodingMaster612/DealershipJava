@@ -77,9 +77,13 @@ public class ProductService {
 		return false;
 	}
 	
-//	public List<Product> getWhipsOnLot() {
-//        return productRepo.getWhipsOnLot();
-//    }
+	public Product save(Product product) {
+        return productRepo.save(product);
+    }
+
+    public List<Product> getProductOnLot() {
+        return productRepo.getProductsOnLot();
+    }
 	public List<Product> getAllProducts() {
         return productRepo.findAll();
     }

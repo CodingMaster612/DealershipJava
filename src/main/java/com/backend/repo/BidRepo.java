@@ -11,6 +11,6 @@ import com.backend.Entity.Product;
 public interface BidRepo extends JpaRepository<Bid, Integer>{
 	
 	
-	@Query(value="select * from  bid where id=?1 and  bid=?2", nativeQuery = true)
-	public Bid findByBidOnCar(Integer id, Integer bid);
+	@Query(value="select * from  bid where bid=?1", nativeQuery = true)
+	public Bid findByBidOnCar(Integer bid);
 }

@@ -49,7 +49,9 @@
                 	<form:form modelAttribute="buy" action="buy" method="post">
      				<button  class="buy-button"><a class="button-link" href="">Buy</a></button>
                 </form:form>
-            </c:when>       
+            </c:when>  
+            
+                 
             
         </c:choose>
          </div>

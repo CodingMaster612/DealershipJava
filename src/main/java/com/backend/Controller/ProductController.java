@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.backend.Entity.Product;
+import com.backend.Entity.User;
 import com.backend.Service.ProductService;
 import com.backend.Service.UserService;
 
@@ -75,10 +76,19 @@ public class ProductController {
 	        }
 
 	        List<Product> allProducts = productService.getAllProducts();
+	        
+	        
+	        
+	        
+	       
 
 	        model.addAttribute("allCars", allProducts);
 	        
 	        
+	        
+	        User user = userService.buyProduct(1,1);
+	        
+	        model.addAttribute("allUser", user);
 	       
 
 	        return "items";
