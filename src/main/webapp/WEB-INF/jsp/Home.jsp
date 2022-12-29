@@ -46,7 +46,7 @@
               <ul class="subnav">
                   <!-- <li><a href="/oldCar">Used Vehicles</a></li>
                   <li><a href="/newCar">New Vehicles</a></li> -->
-                  <li> <a href= "/productLogging">Add Car</a></li>
+                  <!-- <li> <a href= "/productLogging">Add Car</a></li> -->
                   <li> <a href= "/items">Products</a></li>
                   <li> <a href= "/signIn">Log in</a></li>
                   <li> <a href= "/signUp">Sign up</a></li>
@@ -54,14 +54,7 @@
                  	
                  
                  
-                <c:choose>
-            		<c:when test="${ user.getIsAdmin()== false}">
-                
-                  <li><a href="/reports">reports</a></li>
-                
-            </c:when>    
-            
-        </c:choose> 
+              
                 
                   
                   
@@ -83,6 +76,15 @@
         
 
 
+   			<c:choose>
+            		<c:when test="${ user.getIsAdmin()== true}">
+                
+                 <button><a href="/report">report</a></button>
+                  <button><a href="/productLogging">add car</a></button>
+                
+            </c:when>    
+            
+        </c:choose> 
    
        
         
