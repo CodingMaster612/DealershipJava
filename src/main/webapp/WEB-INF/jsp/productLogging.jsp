@@ -34,7 +34,7 @@
        
         <form:input path="time" placeholder="Time" tyoe="time" />
         
-        <%-- <form:input path="user_id" placeholder="UserId" tyoe="id" /> --%>
+       
         <form:button type="submit">Submit</form:button>
        
       </form:form>

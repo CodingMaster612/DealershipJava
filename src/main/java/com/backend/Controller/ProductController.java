@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.backend.Entity.Product;
@@ -78,20 +79,60 @@ public class ProductController {
 	        List<Product> allProducts = productService.getAllProducts();
 	        
 	        
-	        
+	        model.addAttribute("product", new Product());
 	        
 	       
 
 	        model.addAttribute("allCars", allProducts);
 	        
 	        
-	        
-	        User user = userService.buyProduct(1,1);
-	        
-	        model.addAttribute("allUser", user);
+	       
 	       
 
 	        return "items";
 	    }
+	 
+	 
+	 
+	 	@PostMapping("/buyProduct/{userId}/{productId}")
+	    public String buyProduct( @ModelAttribute Product product, Model model ,@PathVariable("userId") Integer userId , @PathVariable("productId") Integer productId) {
 
-}
+	 		 
+	 		
+	 		
+	 		User allProducts = userService.buyProduct(userId,productId);
+	 		
+	 		
+	 		
+	 		if(allProducts == null) {
+		            model.addAttribute("message", "Your invalid");
+
+		            return "items";
+		        }
+	 		 model.addAttribute("allProducts", allProducts);
+		        
+		        model.addAttribute("product", new Product());
+
+		        return "items";  
+		    }
+		 
+	        
+
+	        
+	        
+	        
+	        
+	        
+	        
+	       
+
+	        
+	        
+	        
+	       
+	       
+	    }
+	 
+	 
+
+
