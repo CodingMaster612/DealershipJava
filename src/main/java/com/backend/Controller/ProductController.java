@@ -103,40 +103,28 @@ public class ProductController {
 	 
 	
 	 
-	 @GetMapping("/buyProduct")
-	    public String buyProduct(Model model) {
-
-	       
-	        model.addAttribute("Product", new Product());
-
-	        return "buyProduct";
-	    }
 	 
 	 
 	 
 	 
 	 
-	 @PostMapping("/buyProduct")
-	    public String buyProduct(Model model ,@PathVariable("userId") Integer userId , @PathVariable("productId")  Integer productId) {
+	 
+	 @GetMapping("/buyProduct/{userId}/{productId}")
+	    public String buyProduct(Model model ,@PathVariable("userId") Integer userId , @PathVariable("productId")  Integer productId, HttpSession session) {
 
-	 		 
-	 		
-	 		
-	 		User allProducts = userService.buyProduct(userId,productId);
-	 		
-	 		
-	 		
-	 		if(allProducts == null) {
-		            model.addAttribute("message", "Your invalid");
+		
 
-		            return "buyProduct";
-		        }
-	 		 model.addAttribute("allProducts", allProducts);
-		        
-		        model.addAttribute("product", new Product());
+		 
 
-		        return "buyProduct";  
-		    }
+		 
+
+
+	 
+	 
+	 
+	 
+	 
+	 }
 		 
 	        
 
@@ -146,14 +134,14 @@ public class ProductController {
 	        
 	        
 	        
-	       
+}       
 
 	        
 	        
 	        
 	       
 	       
-	    }
+	    
 	 
 	 
 

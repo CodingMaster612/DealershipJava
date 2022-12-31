@@ -49,7 +49,7 @@
                 	 
      				
      				
-     				<button class="buy-button"><a class="button-link" href="/buyProduct">Buy</a></button>
+     				<button class="buy-button"><a class="button-link" href="/buyProduct/${user.getId()}/${product.getId()}">Buy</a></button>
                
             </c:when>  
             
