@@ -94,7 +94,12 @@ public class ProductController {
 	 
 	 
 	 
-	 	@PostMapping("/buyProduct/{userId}/{productId}")
+	 
+	 
+	 
+	 
+	 
+	 @PostMapping("/buyProduct/{userId}{productId}")
 	    public String buyProduct( @ModelAttribute Product product, Model model ,@PathVariable("userId") Integer userId , @PathVariable("productId") Integer productId) {
 
 	 		 
@@ -107,13 +112,13 @@ public class ProductController {
 	 		if(allProducts == null) {
 		            model.addAttribute("message", "Your invalid");
 
-		            return "items";
+		            return "buyProduct";
 		        }
 	 		 model.addAttribute("allProducts", allProducts);
 		        
 		        model.addAttribute("product", new Product());
 
-		        return "items";  
+		        return "buyProduct";  
 		    }
 		 
 	        
