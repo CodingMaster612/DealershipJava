@@ -99,8 +99,25 @@ public class ProductController {
 	 
 	 
 	 
-	 @PostMapping("/buyProduct/{userId}{productId}")
-	    public String buyProduct( @ModelAttribute Product product, Model model ,@PathVariable("userId") Integer userId , @PathVariable("productId") Integer productId) {
+	
+	 
+	
+	 
+	 @GetMapping("/buyProduct")
+	    public String buyProduct(Model model) {
+
+	       
+	        model.addAttribute("Product", new Product());
+
+	        return "buyProduct";
+	    }
+	 
+	 
+	 
+	 
+	 
+	 @PostMapping("/buyProduct")
+	    public String buyProduct(Model model ,@PathVariable("userId") Integer userId , @PathVariable("productId")  Integer productId) {
 
 	 		 
 	 		
