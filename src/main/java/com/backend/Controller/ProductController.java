@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.backend.Entity.Admin;
 import com.backend.Entity.Product;
 import com.backend.Entity.User;
 import com.backend.Service.ProductService;
@@ -113,12 +114,8 @@ public class ProductController {
 	    public String buyProduct(Model model ,@PathVariable("userId") Integer userId , @PathVariable("productId")  Integer productId, HttpSession session) {
 
 		
-
-		 
-
-		 
-
-
+		 model.addAttribute("user", new User());
+	        return "items";
 	 
 	 
 	 
