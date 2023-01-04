@@ -1,5 +1,6 @@
 package com.backend.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +50,22 @@ public class UserService {
         loggedInUser.getStorage().add(product);
 
         return save(loggedInUser);
+    }
+
+    public List<User> getUserPurchasers() {
+
+
+        List<User> allUsers = findAllUsers();
+
+        List<User> purchasers = new ArrayList<User>();
+        for (User user : allUsers) {
+            if(!user.getStorage().isEmpty()) {
+                purchasers.add(user);
+            }
+        }
+
+        return purchasers;
+
     }
 	
 }

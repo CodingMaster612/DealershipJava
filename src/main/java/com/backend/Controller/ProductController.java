@@ -70,7 +70,6 @@ public class ProductController {
 
 	        Integer loggedInCarId = (Integer) session.getAttribute("loggedInCarId");
 	        
-
 	        if(loggedInCarId != null) {
 	            Product loggedInProduct = productService.findProductById(loggedInCarId);
 	            model.addAttribute("loggedInCar", loggedInProduct);
@@ -85,6 +84,9 @@ public class ProductController {
 	       
 
 	        model.addAttribute("allCars", allProducts);
+	        
+	        
+	      
 	        
 	        
 	       
@@ -110,17 +112,17 @@ public class ProductController {
 	 
 	 
 	 
-	 @GetMapping("/buyProduct/{userId}/{productId}")
-	    public String buyProduct(Model model ,@PathVariable("userId") Integer userId , @PathVariable("productId")  Integer productId, HttpSession session) {
+	 @PostMapping("/buyProduct/{productId}/{userId}")
+	    public String buyProduct(Model model , Product product ,@PathVariable("productId") Integer productId, @PathVariable("userId") Integer userId) {
 
 		
-		 model.addAttribute("user", new User());
-	        return "items";
+		 
 	 
 	 
+	 userService.buyProduct(productId, userId);
 	 
-	 
-	 
+	 model.addAttribute("Product", new Product());
+     			return "items";
 	 }
 		 
 	        

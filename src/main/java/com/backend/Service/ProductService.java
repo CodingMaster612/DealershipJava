@@ -91,4 +91,7 @@ public class ProductService {
     public Product getCarById(Integer id) {
         return productRepo.findById(id).get();
     }
+    public List<Product> getAllBoughtProducts() {
+        return productRepo.getAllBoughtProducts();
+    }
 }

@@ -19,4 +19,7 @@ public interface ProductRepo extends JpaRepository<Product, Integer>{
 	
 	@Query(value = "select * from product where user_id is null", nativeQuery = true)
     public List<Product> getProductsOnLot();
+	
+	@Query(value = "select * from product where user_id is not null", nativeQuery = true)
+    public List<Product> getAllBoughtProducts();
 }
