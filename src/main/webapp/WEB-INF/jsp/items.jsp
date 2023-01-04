@@ -47,7 +47,7 @@
             
             <c:when test="${car.getTime() != 120}">
                 	 
-     				<form:form modelAttribute="product" action="buyProduct/${car.getId()}/${user.getId()}" method="post">
+     				<form:form modelAttribute="product" action="buyProduct/${car.getId()}" method="post">
      				<form:button class="buy-button">Buy</form:button>
                </form:form>
             </c:when>  

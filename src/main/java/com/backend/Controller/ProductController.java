@@ -85,10 +85,11 @@ public class ProductController {
 
 	        model.addAttribute("allCars", allProducts);
 	        
-	        
+	        //add model atrtribute for logged in user 
 	      
-	        
-	        
+	       
+	       
+
 	       
 	       
 
@@ -112,16 +113,26 @@ public class ProductController {
 	 
 	 
 	 
-	 @PostMapping("/buyProduct/{productId}/{userId}")
-	    public String buyProduct(Model model , Product product ,@PathVariable("productId") Integer productId, @PathVariable("userId") Integer userId) {
+	 @PostMapping("/buyProduct/{productId}")
+	    public String buyProduct(Model model , Product product ,@PathVariable("productId") Integer productId, HttpSession session) {
 
-		
+		 Integer userId = (Integer) session.getAttribute("loggedInUserId");
 		 
+		 
+		 User loggedInUser = userService.buyProduct(userId, productId);
+
+	        if(loggedInUser != null) {
+	            session.setAttribute("loggedInUserId", loggedInUser.getId());
+
+	            model.addAttribute("loggedInUser", loggedInUser);
+
+	        }
+
 	 
 	 
-	 userService.buyProduct(productId, userId);
 	 
-	 model.addAttribute("Product", new Product());
+	 //need to get user off session loggedin user id session attribute 
+	 
      			return "items";
 	 }
 		 
