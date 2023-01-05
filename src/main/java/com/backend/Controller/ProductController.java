@@ -129,12 +129,15 @@ public class ProductController {
 	        }
 
 	 
+	
 	 
-	 
-	 //need to get user off session loggedin user id session attribute 
+	
 	 
      			return "items";
 	 }
+	 
+	 //show all cars on lot based on there id 
+	 //${loggedinUser} 
 		 
 	        
 
