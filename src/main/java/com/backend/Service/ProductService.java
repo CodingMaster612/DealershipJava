@@ -8,12 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.backend.Entity.Product;
+import com.backend.Entity.User;
 import com.backend.repo.ProductRepo;
 
 @Service
 public class ProductService {
 	@Autowired
 	ProductRepo productRepo;
+	
+	@Autowired
+	ProductService productService;
 	
 	
 	public Product createProduct(Product product) {
@@ -94,4 +98,8 @@ public class ProductService {
     public List<Product> getAllBoughtProducts() {
         return productRepo.getAllBoughtProducts();
     }
+    
+    public void deleteCarById(Integer productId) {
+        productRepo.deleteById(productId);
+     }
 }
